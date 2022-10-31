@@ -1,7 +1,9 @@
 import React from 'react';
 
+import Header from './Header';
+
 const Dashboard = () => (
-    <div>Household Reminders App</div>
+    <Header/>
 );
 
 export default Dashboard;
