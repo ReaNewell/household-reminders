@@ -5,7 +5,9 @@ const Header = () => {
     const today = false ? date : new Date();
 
     return(
-        <h2>{month[today.getMonth()]} {today.getDate()}, {today.getFullYear()}</h2>
+        <div>
+            <h2>{month[today.getMonth()]} {today.getDate()}, {today.getFullYear()}</h2>
+        </div>
     )
 };
 
