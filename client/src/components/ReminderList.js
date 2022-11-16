@@ -7,7 +7,6 @@ const ReminderList = () => {
     return(
         <div>
             <Reminder />
-            <Reminder />
         </div>
     );
 };
