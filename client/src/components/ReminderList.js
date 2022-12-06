@@ -7,8 +7,6 @@ const ReminderList = () => {
     const { reminders } = useContext(AppContext);
     const listType = listType ? listType : false;
 
-    console.log(`These are the reminders: `, reminders);
-
     return(
         <div>
             {reminders.map(item => {
