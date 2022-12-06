@@ -1,15 +1,20 @@
 import React from 'react';
 
-const Reminder = () => {
-    const title = title ? title : "No Title";
-    const interval = interval ? interval : "No interval";
-    const lastCompleted = lastCompleted ? lastCompleted : "Never Completed";
+const Reminder = (props) => {
+
+
+    const title = props.title ? props.title : "No Title";
+    const interval = props.interval ? props.interval : "No interval";
+    const count = props.count ? props.count : "No count";
+    const lastCompleted = props.lastCompleted ? props.lastCompleted : "Never Completed";
+
 
     return (
         <div className='reminder'>
             <h4>{title}</h4>
-            <p>{interval}</p>
-            <p>{lastCompletexd}</p>
+            <p>{interval.toLowerCase().slice(0, 1).toUpperCase() + interval.slice(1)}</p>
+            <p>{count}</p>
+            <p>{lastCompleted}</p>
             <button>Edit</button>
             <button>Close</button>
         </div>
