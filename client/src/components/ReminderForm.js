@@ -1,3 +1,4 @@
+import moment from "moment";
 import React, { useContext, useState } from "react";
 
 import { AppContext } from "../contexts/AppContext";
@@ -10,10 +11,29 @@ const ReminderForm = () => {
     description: "",
     interval: "day",
     count: 0,
+    lastCompleted: moment()
   });
 
+  // const handleInputChange = (event) => {
+  //   const { name, value } = event.target;
+  //   if (name === "lastCompleted") {
+  //     const date = new Date(value);
+  //     setFormState({
+  //       ...formState,
+  //       [name]: date.toISOString().substring(0, 10),
+  //     });
+  //   } else {
+  //     setFormState({ ...formState, [name]: value });
+  //   }
+  //   console.log(formState);
+  // };
   const handleInputChange = (event) => {
-    setFormState({ ...formState, [event.target.name]: event.target.value });
+    if (event.name === 'lastCompleted') {
+      setFormState({ ...formState, [event.target.name]: moment(event.target.value)});
+    } else {
+      setFormState({ ...formState, [event.target.name]: event.target.value });
+    }
+    console.log(formState);
   };
   const handleAddNewReminder = () => {
     console.log(formState);
@@ -57,6 +77,13 @@ const ReminderForm = () => {
         name="count"
         onChange={handleInputChange}
         value={formState.count}
+      />
+      <input 
+        className="reminder-form__input reminder-form__input--lastCompleted"
+        type="date"
+        name="lastCompleted"
+        onChange={handleInputChange}
+        value={formState.lastCompleted}
       />
       <button onClick={handleAddNewReminder}>ADD</button>
     </div>

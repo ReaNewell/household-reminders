@@ -35,11 +35,11 @@ export const ContextProvider =({children}) => {
             title: reminder.title,
             description: reminder.description,
             interval: reminder.interval,
-            count: reminder.count
+            count: reminder.count,
+            lastCompleted: reminder.lastCompleted
         }
         if (newReminder.title && newReminder.interval && newReminder.count) {
             remindersDispatch(addReminder(newReminder));
-            console.log(reminders);
         } else {
             console.log("Missing data required to add new reminder.");
         }
