@@ -10,38 +10,27 @@ const ReminderForm = () => {
     title: "",
     description: "",
     interval: "day",
-    count: 0,
-    lastCompleted: moment()
+    count: 1,
+    lastCompleted: moment().format("ll")
   });
 
-  // const handleInputChange = (event) => {
-  //   const { name, value } = event.target;
-  //   if (name === "lastCompleted") {
-  //     const date = new Date(value);
-  //     setFormState({
-  //       ...formState,
-  //       [name]: date.toISOString().substring(0, 10),
-  //     });
-  //   } else {
-  //     setFormState({ ...formState, [name]: value });
-  //   }
-  //   console.log(formState);
-  // };
   const handleInputChange = (event) => {
     if (event.name === 'lastCompleted') {
-      setFormState({ ...formState, [event.target.name]: moment(event.target.value)});
+      setFormState({ ...formState, [event.target.name]: moment(event.target.value).format("ll")});
     } else {
       setFormState({ ...formState, [event.target.name]: event.target.value });
     }
-    console.log(formState);
   };
+
   const handleAddNewReminder = () => {
-    console.log(formState);
-    addNewReminder(formState);
+    const dueDate = moment(formState.lastCompleted).add(formState.count, formState.interval).format('ll');
+    addNewReminder(formState, dueDate);
+    console.log(`Reminder added: ${formState} and is due ${moment(dueDate).format('ll')}`);
   };
 
   return (
     <div className="reminder-form">
+      <h2>New Reminder Form</h2>
       <input
         className="reminder-form__input reminder-form__input--title"
         type="text"

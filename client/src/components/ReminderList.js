@@ -1,14 +1,13 @@
 import React, { useContext } from 'react';
 import Reminder from './Reminder';
 
-import { AppContext } from '../contexts/AppContext';
-
-const ReminderList = () => {
-    const { reminders } = useContext(AppContext);
-    const listType = listType ? listType : false;
+const ReminderList = (props) => {
+    const reminders = props.reminders;
+    const listType = props.listType ? props.listType : false;
 
     return(
         <div>
+            <h4>{listType.toUpperCase()}</h4>
             {reminders.map(item => {
                 return <Reminder
                     {...item}
