@@ -16,6 +16,10 @@ const LoginForm = (props) => {
     setFormState({ ...formState, [event.target.name]: event.target.value });
   };
 
+  const handleCancelSelection = () => {
+    props.handleChangeSelectedForm(event);
+  }
+
   const signupWithEmail = () => {
     if (
       formState.signUpEmail &&
@@ -46,36 +50,46 @@ const LoginForm = (props) => {
   };
 
   return props.selectedForm === "signup" ? (
-    <div>
+    <div className="login-form">
       <input
         type="email"
         name="signUpEmail"
         onChange={handleOnChange}
         value={formState.signUpEmail}
+        placeholder='Email'
+        className="login-form__input login-form__input--email"
       />
       <input
         type="password"
         name="signUpPassword"
         onChange={handleOnChange}
         value={formState.signUppassword}
+        placeholder='Password'
+        className="login-form__input login-form__input--emai"
       />
-      <button onClick={signupWithEmail}>SIGN UP</button>
+      <button onClick={signupWithEmail} className="login-form__button">SIGN UP</button>
+      <button onClick={handleCancelSelection} className="login-form__button--cancel">Nevermind</button>
     </div>
   ) : (
-    <div>
+    <div className="login-form">
       <input
         type="email"
         name="loginEmail"
         onChange={handleOnChange}
         value={formState.loginEmail}
+        placeholder='Email'
+        className="login-form__input login-form__input--emai"
       />
       <input
         type="password"
         name="loginPassword"
         onChange={handleOnChange}
         value={formState.loginPassword}
+        placeholder='Password'
+        className="login-form__input login-form__input--emai"
       />
-      <button onClick={loginWithEmail}>LOGIN</button>
+      <button onClick={loginWithEmail} className="login-form__button">LOGIN</button>
+      <button onClick={handleCancelSelection} className="login-form__button--cancel">Nevermind</button>
     </div>
   );
 };

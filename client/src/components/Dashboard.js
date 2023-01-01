@@ -15,12 +15,14 @@ const Dashboard = () => {
     };
 
     return (
-        <div>
-            <Header />
-            {reminderLists.due.length > 0 && <ReminderList reminders={reminderLists.due} listType={"due"}/>}
-            {reminderLists.upcoming.length > 0 && <ReminderList reminders={reminderLists.upcoming} listType={"upcoming"}/>}
-            {reminderLists.other.length > 0 && <ReminderList reminders={reminderLists.other} listType={"other"}/>}
-            <ReminderForm />
+        <div className='dashboard__container'>
+            <div className='dashboard'>
+                <Header />
+                {reminderLists.due.length > 0 && <ReminderList reminders={reminderLists.due} listType={"due"}/>}
+                {reminderLists.upcoming.length > 0 && <ReminderList reminders={reminderLists.upcoming} listType={"upcoming"}/>}
+                {reminderLists.other.length > 0 && <ReminderList reminders={reminderLists.other} listType={"other"}/>}
+                <ReminderForm />
+            </div>
         </div>
     )
 };

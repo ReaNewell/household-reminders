@@ -1,7 +1,20 @@
 // COLORS
-
+$white: #FFFFFF;
+$main-color: #DFD6CD;
+$secondary-color: #706B67;
 
 // CONTAINERS
 $main-width: 65rem;
 
 // FONTS
+$base-font: 'M PLUS 1p', sans-serif;
+$super-large: 4.8rem;
+$font-size-large: 32px;
+$font-size-medium: 24px;
+$font-size-small: 16px;
+$font-size-xsmall: 12px;
+
+// SHADOWS
+$title-shadowing: -3px -3px 6px #EFEAE4, 3px 3px 6px #AAA096;
+$raised-shadowing: -8px -8px 16px 0px #F2E9E0, 8px 8px 16px 0px #B8AFA6;
+$inset-shadowing: inset -4px -4px 8px 0px #F2E9E0, inset 4px 4px 8px 0px #B8AFA6;

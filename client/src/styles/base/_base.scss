@@ -1,5 +1,44 @@
+:root {
+    font-size: 20px;
+}
+
 * {
     box-sizing: border-box;
     margin: 0px;
     padding: 0px;
+}
+
+html {
+    background-color: $main-color;
+}
+
+@mixin button {
+    background-color: $main-color;
+    font-family: $base-font;
+    box-shadow: $raised-shadowing;
+    font-size: $font-size-medium;
+    font-weight: 300;
+    color: $secondary-color;
+    padding: 0.5rem 1.25rem;
+    border: none;
+    border-radius: 15px;
+    height: 3.5rem;
+    width: 10rem;
+}
+@mixin cancel-button {
+    background: none;
+    font-family: $base-font;
+    font-size: $font-size-small;
+    font-weight: 300;
+    text-decoration: underline;
+    color: $secondary-color;
+    border: none;
+    height: 3.5rem;
+    width: 10rem;
+}
+
+input[type=text], input[type=button], select {
+    -webkit-appearance: none;
+    -webkit-border-radius: 0;
+    border-radius: 0;
 }

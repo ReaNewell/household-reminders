@@ -1,0 +1,21 @@
+.header {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    box-shadow: $raised-shadowing;
+    border-radius: 0 0 0.75rem 0.75rem;
+    padding: 1rem;
+    margin-bottom: 2rem;
+
+    &__title {
+        color: $secondary-color;
+        font-size: $font-size-large;
+        font-family: $base-font;
+        font-weight: 300;
+    }
+    &__button {
+        @include cancel-button;
+        height: auto;
+        width: auto;
+    }
+}

@@ -22,29 +22,23 @@ const Login = () => {
     switch (selectedForm) {
       case "signup":
         return (
-          <div>
-            <LoginForm selectedForm= {selectedForm} />
-            <button onClick={handleChangeSelectedForm} name="login">
-              Login
-            </button>
+          <div className="login__buttons">
+            <LoginForm handleChangeSelectedForm={handleChangeSelectedForm} selectedForm= {selectedForm} />
           </div>
         );
       case "login":
         return (
-          <div>
-            <LoginForm selectedForm= {selectedForm} />
-            <button onClick={handleChangeSelectedForm} name="signup">
-              Get Started
-            </button>
+          <div className="login__buttons">
+            <LoginForm handleChangeSelectedForm={handleChangeSelectedForm} selectedForm= {selectedForm} />
           </div>
         );
       default:
         return (
-          <div>
-            <button onClick={handleChangeSelectedForm} name="signup">
+          <div className="login__buttons">
+            <button onClick={handleChangeSelectedForm} className="login__button" name="signup">
               Get Started
             </button>
-            <button onClick={handleChangeSelectedForm} name="login">
+            <button onClick={handleChangeSelectedForm} className="login__button" name="login">
               Login
             </button>
           </div>
@@ -53,8 +47,8 @@ const Login = () => {
   };
 
   return (
-    <div>
-      <h1>Household Reminders</h1>
+    <div className="login">
+      <h1 className="login__header">Kaji</h1>
       {display()}
     </div>
   );

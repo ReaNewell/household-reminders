@@ -1,0 +1,18 @@
+.reminder-list {
+    box-shadow: $inset-shadowing;
+    border-radius: 0.75rem;
+    max-height: 30rem;
+    padding: 1rem;
+
+    &__container {
+        margin-bottom: 1rem;
+    }
+    &__title {
+        font-size: $font-size-medium;
+        font-family: $base-font;
+        font-weight: 300;
+        color: $secondary-color;
+        text-transform: capitalize;
+        margin-bottom: 0.25rem;
+    }
+}

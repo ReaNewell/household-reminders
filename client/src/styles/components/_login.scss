@@ -1,0 +1,32 @@
+.login {
+    background-color: $main-color;
+    height: 100vh;
+    box-sizing: border-box;
+    padding: 25vh 0 25vh 0%;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+
+    &__header {
+        text-shadow: $title-shadowing;
+        font-family: $base-font;
+        font-size: $super-large;
+        color: #F6F2ED;
+        text-transform: uppercase;
+        letter-spacing: 1rem;
+    }
+
+    &__buttons {
+        display: flex;
+        flex-direction: column;
+
+        button:not(:last-child) {
+            margin-bottom: 2rem;
+        }
+    }
+    &__button {
+        @include button;
+    }
+}

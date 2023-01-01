@@ -12,9 +12,9 @@ const Header = () => {
     }
 
     return(
-        <div>
-            <h2>{month[today.getMonth()]} {today.getDate()}, {today.getFullYear()}</h2>
-            <button onClick={handleLogout}>Logout</button>
+        <div className="header">
+            <h2 className="header__title">{month[today.getMonth()]} {today.getDate()}, {today.getFullYear()}</h2>
+            <button className="header__button" onClick={handleLogout}>Logout</button>
         </div>
     )
 };

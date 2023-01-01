@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React from 'react';
 import Reminder from './Reminder';
 
 const ReminderList = (props) => {
@@ -6,14 +6,16 @@ const ReminderList = (props) => {
     const listType = props.listType ? props.listType : false;
 
     return(
-        <div>
-            <h4>{listType.toUpperCase()}</h4>
+        <div className='reminder-list__container'>
+            <h4 className='reminder-list__title'>{listType}</h4>
+            <div className='reminder-list'>
             {reminders.map(item => {
                 return <Reminder
                     {...item}
                     key = {item.title}
                 />
             })}
+            </div>
         </div>
     );
 };
