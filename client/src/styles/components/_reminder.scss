@@ -64,6 +64,8 @@
                 grid-area: icount;
             }
             &--last-completed {
+                -webkit-appearance: none; 
+                appearance: none;
                 grid-area: date;
                 width: 100%;
             }
