@@ -1,0 +1,100 @@
+.reminder-form {
+    display: grid;
+    max-width: 25rem;
+    gap: 1rem;
+    padding: 1rem;
+    justify-content: center;
+    align-items: center;
+    grid-template-areas:  'title       title       title'
+                          'description description description'
+                          'interval    .           count'
+                          'date        date        date'
+                          'cancel      .           add';
+    // &::before {
+    //     content: "";
+    //     position: fixed;
+    //     background-color: #24242424;
+    //     height: 100vh;
+    //     width: 100vw;
+    //     z-index: -1;
+    //     top: 0;
+    //     left: 0;
+    // }
+    &__container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        box-sizing: border-box;
+        box-shadow: $raised-shadowing;
+        position: fixed;
+        background-color: $main-color;
+        width: 100vw;
+        top: 30%;
+        left: 0;
+        height: 70%;
+    }
+    &__input {
+        background-color: $main-color;
+        box-shadow: $inset-shadowing;
+        color: $secondary-color;
+        font-size: $font-size-small;
+        font-weight: 300;
+        border: none;
+        border-radius: 0.75rem !important;
+        height: 2.5rem;
+        width: auto;
+        padding: 0.75rem;
+
+        &--title {
+            grid-area: title;
+        }
+        &--description {
+            grid-area: description;
+        }
+        &--interval {
+            grid-area: interval;
+        }
+        &--count {
+            grid-area: count;
+        }
+        &--last-completed {
+            -webkit-appearance: none; 
+            appearance: none;
+            display: relative;
+            grid-area: date;
+
+            &::before {
+                content: "";
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                box-shadow: 0 0 10px 0 rgb(163, 139, 139);
+                z-index: -1;
+            }
+        }
+    }
+    &__button {
+        @include button;
+        width: auto;
+        height: auto;
+        font-size: $font-size-small;
+        grid-area: add;
+
+        &--cancel {
+            grid-area: cancel;
+        }
+    }
+    &__toggle {
+        display: inline-block;
+        background-color: $main-color;
+        box-shadow: $raised-shadowing;
+        border-radius: 50% 50% 0 0;
+        padding: 0.5rem;
+
+        position: fixed;
+        bottom: 0;
+        right: 0.5rem;
+    }
+}

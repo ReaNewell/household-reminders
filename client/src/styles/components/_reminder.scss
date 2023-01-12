@@ -1,6 +1,7 @@
 .reminder {
     display: flex;
     justify-content: space-between;
+    box-sizing: content-box;
 
     &__info {
         font-family: $base-font;
@@ -64,9 +65,15 @@
             }
             &--last-completed {
                 grid-area: date;
+                width: 100%;
             }
         }
         &__button {
+            @include button;
+            width: auto;
+            height: auto;
+            font-size: $font-size-small;
+
             &--cancel {
                 grid-area: cancel;
             }

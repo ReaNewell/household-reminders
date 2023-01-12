@@ -37,8 +37,9 @@ html {
     width: 10rem;
 }
 
-input[type=text], input[type=button], select {
+input[type=text], input[type=number], input[type=button], select {
     -webkit-appearance: none;
     -webkit-border-radius: 0;
+    appearance: none;
     border-radius: 0;
 }
