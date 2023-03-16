@@ -16,15 +16,26 @@
             font-size: $font-size-xsmall;
         }
     }
+    &__buttons {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0.5rem;
+    }
     &__button {
         @include button;
         border-radius: 50%;
         height: 2rem;
         width: 2rem;
-        padding: 0rem;
+        padding: 0rem 0rem;
+        margin: 0rem;
     }
     &:not(:last-child) {
-        margin-bottom: 1rem;
+        padding-bottom: 0.6rem;
+        border-bottom: 1px solid $secondary-color__trans;
+    }
+    &:not(:first-child) {
+        padding-top: 0.6rem;
     }
 
     &--editing {

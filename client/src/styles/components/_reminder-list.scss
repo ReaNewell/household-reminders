@@ -2,6 +2,7 @@
     box-shadow: $inset-shadowing;
     border-radius: 0.75rem;
     max-height: 30rem;
+    overflow: scroll;
     padding: 1rem;
 
     &__container {
